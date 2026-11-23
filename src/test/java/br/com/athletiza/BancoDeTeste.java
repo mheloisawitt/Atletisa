@@ -24,14 +24,14 @@ public final class BancoDeTeste {
         ConnectionFactory.configurar(config);
 
         try (Connection con = ConnectionFactory.getConnection(); Statement st = con.createStatement()) {
-            for (String script : new String[]{"01_estrutura.sql", "02_dados_exemplo.sql"}) {
+            for (String script : new String[]{"01_estrutura.sql", "dados_teste.sql"}) {
                 for (String comando : lerScript(script).split(";")) {
                     if (!comando.isBlank()) {
                         st.execute(comando);
                     }
                 }
             }
-        } catch (br.com.athletiza.exception.PersistenciaException e) {
+        } catch (br.com.athletiza.excecao.PersistenciaException e) {
             throw new SQLException(e.getMessage(), e);
         }
     }
@@ -43,7 +43,7 @@ public final class BancoDeTeste {
                     st.execute(comando);
                 }
             }
-        } catch (br.com.athletiza.exception.PersistenciaException e) {
+        } catch (br.com.athletiza.excecao.PersistenciaException e) {
             throw new SQLException(e.getMessage(), e);
         }
     }

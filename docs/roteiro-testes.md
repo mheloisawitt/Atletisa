@@ -12,8 +12,8 @@ Além deste roteiro manual, o projeto tem testes automatizados (`mvn test`, banc
 3. **Datas dos dados de exemplo:** os treinos, eventos e tarefas são de outubro a dezembro de 2026. Os alertas e a
    lista de próximos eventos dependem da data do computador. Se estiver testando em outra data, use os casos
    marcados com ⏱ como referência e ajuste as datas dos registros para perto de hoje.
-4. Usuários para os testes de perfil (senha `athletiza`): `mariana` (Presidência), `juliana` (Diretora de Esportes),
-   `rafael` (Diretor de Eventos) e `bruno` (Assessor de Esportes).
+4. Usuários para os testes de perfil (senha `athletiza`): `laiza` (Presidência), `manuela` (Diretora de Esportes),
+   `joao` (Diretor de Eventos), `heloisa` (Diretora de Ações Sociais) e `fernando` (Assessor de Esportes).
 
 **Como preencher:** em *Resultado* escreva **OK** ou **Falhou**; em *Obs.*, o que apareceu de diferente.
 Casos marcados com ❌ são negativos: o sistema deve **recusar** a operação com uma mensagem clara.
@@ -29,11 +29,11 @@ Casos marcados com ❌ são negativos: o sistema deve **recusar** a operação c
 | ACE-05 | Usuário inativo | Entrar com ele | ❌ "Este usuário está desativado. Procure um administrador." | | |
 | ACE-06 | — | Marcar **Lembrar de mim**, entrar, sair e abrir de novo | O login vem preenchido | | |
 | ACE-07 | Logado | Clicar no nome no rodapé do menu e trocar a senha informando a atual errada | ❌ "A senha atual não confere." | | |
-| ACE-08 | Logado como `bruno` (Assessor) | Percorrer as telas | Menu só com Início, Atletas, Competições, Treinos e Eventos; botões de incluir, editar e excluir desabilitados; em Eventos, só os de competição | | |
-| ACE-09 | Logado como `mariana` (Presidência) | Abrir o menu | Menu Usuários não aparece; todos os demais módulos permitem alterar | | |
-| ACE-10 | Logado como `juliana` (Diretora de Esportes) | Incluir atleta e treino; em Gestão, tentar incluir | Atleta e treino gravados; em Gestão os botões ficam desabilitados | | |
-| ACE-11 | Logado como `juliana` | Eventos → + Incluir; depois tentar editar a Festa Atlética | Tipo só oferece "Competição"; na festa, ❌ "Seu perfil não permite alterar este registro: ele é de outra área." | | |
-| ACE-12 | Logado como `rafael` (Diretor de Eventos) | Eventos → + Incluir; Demandas → + Incluir | Tipo oferece Festa e Outro; a demanda só pode ser ligada a festas e eventos "Outro" | | |
+| ACE-08 | Logado como `fernando` (Assessor) | Percorrer as telas | Menu só com Início, Atletas, Competições, Treinos e Eventos; botões de incluir, editar e excluir desabilitados; em Eventos, só os de competição | | |
+| ACE-09 | Logado como `laiza` (Presidência) | Abrir o menu | Menu Usuários não aparece; todos os demais módulos permitem alterar | | |
+| ACE-10 | Logado como `manuela` (Diretora de Esportes) | Incluir atleta e treino; em Gestão, tentar incluir | Atleta e treino gravados; em Gestão os botões ficam desabilitados | | |
+| ACE-11 | Logado como `manuela` | Eventos → + Incluir; depois tentar editar a Festa Atlética | Tipo só oferece "Competição"; na festa, ❌ "Seu perfil não permite alterar este registro: ele é de outra área." | | |
+| ACE-12 | Logado como `joao` (Diretor de Eventos) | Eventos → + Incluir; Demandas → + Incluir | Tipo oferece Festa e Outro; a demanda só pode ser ligada a festas e eventos "Outro" | | |
 | ACE-13 | Membro sem cargo na gestão em andamento com usuário | Entrar com ele | ❌ "Seu usuário não está ligado a um cargo da gestão em andamento. Procure um administrador." | | |
 
 ## 2. Início (calendário)
