@@ -64,7 +64,7 @@ INSERT INTO treino (tipo, titulo, data, horario, local, modalidade_id, responsav
              UNION ALL SELECT 'AMISTOSO', 'Amistoso Handebol (M) x Atlética Feras', '2026-11-21', '16:00', 'Ginásio',
                               'Handebol', 'MASCULINO', 'Atlética Feras')
          AS v, modalidade m, membro r
-    WHERE m.nome = v.modalidade AND m.genero = v.genero AND r.matricula = '201902';
+    WHERE m.nome = v.modalidade AND m.genero = v.genero AND r.matricula = '202303';
 
 INSERT INTO presenca_treino (treino_id, atleta_id, presente)
     SELECT t.id, a.id,
@@ -114,14 +114,6 @@ INSERT INTO resultado (competicao_id, modalidade_id, atleta_id, colocacao, placa
          competicao c, modalidade m, atleta a
     WHERE c.titulo = 'JIUDESC 2026' AND m.nome = v.modalidade AND m.genero = v.genero AND a.matricula = v.matricula;
 
-INSERT INTO membro (nome, matricula, contato) VALUES
-    ('Tiago Moreira', '202111', 'tiago.moreira@email.com');
-
-INSERT INTO gestao_membro_cargo (gestao_id, membro_id, cargo_id)
-    SELECT g.id, m.id, c.id
-    FROM gestao g, membro m, cargo c
-    WHERE g.nome = 'Gestão 2025-2026' AND m.matricula = '202111' AND c.nome = 'Secretário';
-
 INSERT INTO demanda (titulo, prioridade, situacao, prazo, evento_id, competicao_id)
     SELECT v.titulo, v.prioridade, v.situacao, CAST(v.prazo AS DATE), e.id, c.id
     FROM (SELECT 'Inscrever atletas no Regional' AS titulo, 'ALTA' AS prioridade, 'EM_ANDAMENTO' AS situacao,
@@ -145,20 +137,20 @@ INSERT INTO demanda (titulo, prioridade, situacao, prazo, evento_id, competicao_
 
 INSERT INTO demanda_responsavel (demanda_id, membro_id)
     SELECT d.id, m.id
-    FROM (SELECT 'Inscrever atletas no Regional' AS titulo, '201902' AS matricula
-             UNION ALL SELECT 'Conseguir uniformes', '201902'
-             UNION ALL SELECT 'Organizar hospedagem', '201902'
-             UNION ALL SELECT 'Agendar exames médicos', '202105'
-             UNION ALL SELECT 'Montar as equipes', '201902'
-             UNION ALL SELECT 'Convidar palestrante', '201933'
-             UNION ALL SELECT 'Reservar auditório', '201933'
-             UNION ALL SELECT 'Emitir certificados', '202111'
-             UNION ALL SELECT 'Pagar taxa de inscrição', '202010'
-             UNION ALL SELECT 'Prestação de contas do Desafio', '202010'
-             UNION ALL SELECT 'Relatório para a reitoria', '201801'
-             UNION ALL SELECT 'Atualizar a ata das reuniões', '202111'
-             UNION ALL SELECT 'Divulgar a ação social', '201933') AS v,
+    FROM (SELECT 'Inscrever atletas no Regional' AS titulo, '202303' AS matricula
+             UNION ALL SELECT 'Conseguir uniformes', '202307'
+             UNION ALL SELECT 'Organizar hospedagem', '202303'
+             UNION ALL SELECT 'Agendar exames médicos', '202304'
+             UNION ALL SELECT 'Montar as equipes', '202305'
+             UNION ALL SELECT 'Convidar palestrante', '202308'
+             UNION ALL SELECT 'Reservar auditório', '202309'
+             UNION ALL SELECT 'Emitir certificados', '202310'
+             UNION ALL SELECT 'Pagar taxa de inscrição', '202302'
+             UNION ALL SELECT 'Prestação de contas do Desafio', '202302'
+             UNION ALL SELECT 'Relatório para a reitoria', '202301'
+             UNION ALL SELECT 'Atualizar a ata das reuniões', '202302'
+             UNION ALL SELECT 'Divulgar a ação social', '202312') AS v,
          demanda d, membro m
     WHERE d.titulo = v.titulo AND m.matricula = v.matricula;
 
-UPDATE demanda SET solicitante_id = (SELECT id FROM usuario WHERE login = 'mariana') WHERE solicitante_id IS NULL;
+UPDATE demanda SET solicitante_id = (SELECT id FROM usuario WHERE login = 'laiza') WHERE solicitante_id IS NULL;

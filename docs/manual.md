@@ -23,8 +23,8 @@ eventos desses tipos. Em **Demandas**, o diretor só registra as ligadas a um ev
 área. Gestão, compromissos do calendário e Registros ficam com a presidência. Os botões que o perfil
 não permite ficam desabilitados.
 
-Usuários de exemplo (senha `athletiza`): `mariana` (Presidência), `juliana` (Diretora de Esportes),
-`rafael` (Diretor de Eventos) e `bruno` (Assessor de Esportes).
+Usuários de exemplo (senha `athletiza`): `laiza` (Presidência), `manuela` (Diretora de Esportes),
+`joao` (Diretor de Eventos), `heloisa` (Diretora de Ações Sociais) e `fernando` (Assessor de Esportes).
 
 ## Padrão das telas
 
